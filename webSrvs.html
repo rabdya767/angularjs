@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head ng-controller="myCtrlr">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github API</title>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/websrvc.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body ng-app="myModule">
+    <div ng-controller="myCtrlr">
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Password</th>
+            <th>Admin</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="user in users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.login }}</td>
+            <td>{{ user.node_id}}</td>
+            <td>{{ user.site_admin}}</td>
+            <td>{{ user.type}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

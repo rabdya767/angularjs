@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ngInit</title>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/ngInit.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body ng-app="myModule">
+    <div ng-controller="myCtrlr">
+      <h2>Countries and Cities</h2>
+      <ul>
+        <li ng-repeat="country in countries" ng-init="parentIndex = $index">
+          {{country.name}} ParentIndex = {{ parentIndex }}
+          <ul>
+            <li ng-repeat="city in country.cities">
+              {{ city.name }} ParentIndex = {{ parentIndex }} 
+              childIndex = {{ $index }}
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

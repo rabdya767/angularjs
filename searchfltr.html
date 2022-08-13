@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+  <head ng-controller="myCtrlr">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/searchfltr.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div ng-controller="myCtrlr">
+        <!-- 1st case -- Search : <input type="text" placeholder="Search Employee Name" ng-model="searchText.name" /> -->
+        <!-- 2nd Case -- <input type="text" placeholder="Search Name" ng-model="searchText.name" />
+        <input type="text" placeholder="Search City" ng-model="searchText.city" />
+        <input type="checkbox" ng-model="exactMatch" />ExactMatch -->
+        <input type="text" ng-model="searchText" placeholder="Search City and Name" />
+        <br /> <br />
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date of Birth </th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr ng-repeat="employee in employees | filter : searchText : exactMatch"> -->
+                <tr ng-repeat="employee in employees | filter : search">
+                    <td>{{ employee.name | uppercase}}</td>
+                    <td>{{ employee.dob | date : "dd MMM yyyy"}}</td>
+                    <td>{{ employee.gender | lowercase}}</td>
+                    <td>{{ employee.salary | number : 2}}</td>
+                    <td>{{ employee.city}} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </body>
+</html>

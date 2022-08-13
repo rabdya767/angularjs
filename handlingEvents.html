@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+  <head ng-controller="myCtrlr">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/handlingEvents.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div ng-controller="myCtrlr">
+      <h1>{{ title }}</h1>
+      <table>
+        <thead>
+            <tr>
+                <th>Technology</th>
+                <th>Likes</th>
+                <th>Dislikes</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat = "technology in technologies">
+                <td> {{ technology.name }}</td>
+                <td id="like"> {{ technology.likes }}</td>
+                <td id="dislike"> {{ technology.dislikes }}</td>
+                <td>
+                    <input type="button" value="Like" id="likebtn" ng-click="incrementLikes(technology)">
+                    <input type="button" value="DisLike" id="dislikebtn"ng-click="decrementLikes(technology)">
+                </td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td  id="like" >{{ likescount }}</td>
+                <td id="dislike">{{ dislikescount }}</td>
+                <td><input type="button" value="       Reset       " id="reset1" ng-click="reset(likescount,dislikescount)"></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

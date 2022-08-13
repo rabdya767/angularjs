@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/ngRepeat.js"></script>
+  </head>
+  <body ng-app="myModule">
+    <div ng-controller="myController">
+      <h1>Employees details</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>firstName</th>
+            <th>lastName</th>
+            <th>gender</th>
+            <th>cgpa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="employee in employees">
+            <td>{{employee.firstName }}</td>
+            <td>{{employee.lastName }}</td>
+            <td>{{employee.gender }}</td>
+            <td>{{ employee.cgpa}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <h1>College Details</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Branch</th>
+            <th>Code</th>
+            <th>Yoest</th>
+            <th>Hod</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat = "branch in college">
+            <td>{{branch.branch}}</td>
+            <td>{{branch.code}}</td>
+            <td>{{branch.year}}</td>
+            <td><b>{{branch.hod}}</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

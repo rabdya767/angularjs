@@ -1,0 +1,20 @@
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date of Birth </th>
+            <th>Role</th>
+            <th>Salary</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="employee in employees">
+            <td>{{ employee.name | uppercase}}</td>
+            <td>{{ employee.dob | date : "dd MMM yyyy"}}</td>
+            <td>SE{{ employee.role}}</td>
+            <td>{{ employee.salary | number : 2}}</td>
+            <td>{{ employee.city}} </td>
+        </tr>
+    </tbody>
+</table>

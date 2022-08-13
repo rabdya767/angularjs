@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+  <head ng-controller="myCtrlr">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emp Table</title>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/employee.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div ng-controller="myCtrlr">
+      Select View :
+      <select ng-model="empView">
+        <option value="Table.html">Table View</option>
+        <option value="list.html">List View</option>
+      </select>
+      <br /><br />
+      <div ng-include="empView"></div>
+
+      <!-- <div ng-include="tableView"></div>
+      <div ng-include="listView"></div> -->
+    </div>
+  </body>
+</html>
