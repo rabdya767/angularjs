@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script/script1.js"></script>
+  </head>
+  <body>
+    <div ng-controller="countryController as country">
+      <h1>{{country.name}}</h1>
+      <div ng-controller="stateController as state">
+        <!-- <h2>{{$parent.name}} - {{name}}</h2> -->
+        <h2>{{country.name}} - {{state.name}}</h2>
+        <div ng-controller="cityController as city">
+          <!-- <h3>{{$parent.$parent.name}} - {{$parent.name}} - {{name}}</h3></div> -->
+          <h3>{{country.name}} - {{state.name}} - {{city.name}}</h3>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
