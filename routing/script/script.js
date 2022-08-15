@@ -3,9 +3,11 @@
 
 var myApp = angular.module("myModule",["ngRoute"])
                     .config(function($routeProvider,$locationProvider){
+                        $routeProvider.caseInsensitiveMatch = true;
                         $routeProvider
                             .when("/home",{
                                 templateUrl : "templates/home.html",
+                                // template: `<h1>This is inline template</h1>`,//to use inline template
                                 controller : "homeController as hc"
                             })
                             .when("/concepts",{                                
@@ -19,7 +21,8 @@ var myApp = angular.module("myModule",["ngRoute"])
                             .when("/stats/:website",{                                
                                 templateUrl : "templates/statsDetails.html",
                                 controller : "statsDetailsController",
-                                controllerAs : "sdc"
+                                controllerAs : "sdc",
+                                caseInsensitiveMatch : true,
                                 // controller : "statsDetailsController  as sdc"
                             })
                             .otherwise({
@@ -32,6 +35,11 @@ var myApp = angular.module("myModule",["ngRoute"])
                     })
                     .controller("conceptsController", function(){
                         this.concepts = ["directives","scope object","ng-repeat","angular ui & bootstrap","routing","services"];
+                        $scope.$on("$routerChangeStart", function(event , next, current){
+                            if(!confirm("Are you sure, You want to navigate away from this page"+next.$$route.originalPath)){
+                                event.preventDefault();
+                            }
+                        })
                     })
                     .controller("statsController", function(){
                         this.websites = ["upwork.com","angular.io","mxtoolbox.com","cricbuzz.com","leetcode.com","webflow.com"];

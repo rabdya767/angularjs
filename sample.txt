@@ -23,3 +23,10 @@ var myApp = angular
     .controller("myCtrlr", function ($scope) {
 
     });
+
+
+https://www.youtube.com/playlist?list=PL6n9fhu94yhWqGD8BuKuX-VTKqlNBj-m6
+https://www.youtube.com/playlist?list=PL6n9fhu94yhWNJaDgh0mfae_9xoQ4E_Zj
+https://www.youtube.com/playlist?list=PL6n9fhu94yhXwcl3a6rIfAI7QmGYIkfK5
+https://www.youtube.com/playlist?list=PL6n9fhu94yhVm7BcSWpGpRFQc1AikjP8h
+https://www.youtube.com/playlist?list=PL6n9fhu94yhWUcq5Pc16uf8YKXoZ87Vh_
